@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">CRM-system</div>
+            <nav>
+                <ul>
+                    <li><a href="../clients/index.html"><img src="icons/home.png" alt="Главная">Главная</a></li>
+                    <li><a href="../reservation/index.html"><img src="icons/booking.png" alt="Бронирование">Бронирование</a></li>
+                    <li><a href="../normclients/index.html"><img src="icons/clients.png" alt="Клиенты">Клиенты</a></li>
+                    <li><a href="../services/index.html" class="active"><img src="icons/services.png" alt="Услуги">Услуги</a></li>
+                    <li><a href="../reports/index.html"><img src="icons/reports.png" alt="Отчеты">Отчеты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="time-date">22:44 01 мая 2024</div>
+            </header>
+            <main>
+                <div class="service-list">
+                    <button class="service-button" data-tariff="Стандарт">Тариф “Стандарт”</button>
+                    <button class="service-button" data-tariff="Комфорт">Тариф “Комфорт”</button>
+                    <button class="add-button">+ Добавить</button>
+                </div>
+                <div class="service-details" id="service-details">
+                    <h2>Номер “<span id="tariff-name">Стандарт</span>”</h2>
+                    <p>Площадь: <span id="tariff-area">8 м²</span></p>
+                    <p>Выгул: <span id="tariff-walks">2 выгула в день</span></p>
+                    <p>Стоимость: <span id="tariff-price">25 $</span></p>
+                    <button class="edit-button">Редактировать</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Add/Edit Tariff Modal -->
+    <div class="modal-overlay" id="modal-overlay-tariff">
+        <div class="modal" id="modal-tariff">
+            <span class="close-button" id="close-button-tariff">&times;</span>
+            <h2 id="modal-title">Добавить тариф</h2>
+            <div class="input-group">
+                <label for="tariff-name-input">Название тарифа</label>
+                <input type="text" id="tariff-name-input">
+            </div>
+            <div class="input-group">
+                <label for="tariff-area-input">Площадь</label>
+                <input type="text" id="tariff-area-input">
+            </div>
+            <div class="input-group">
+                <label for="tariff-walks-input">Выгул</label>
+                <input type="text" id="tariff-walks-input">
+            </div>
+            <div class="input-group">
+                <label for="tariff-price-input">Стоимость</label>
+                <input type="text" id="tariff-price-input">
+            </div>
+            <button class="save-button" id="save-tariff-button">Сохранить</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="modal-overlay-confirmation">
+        <div class="modal" id="modal-confirmation">
+            <h2>Изменения внесены</h2>
+            <button class="confirm-button" id="confirm-button">Готово!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

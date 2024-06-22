@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Login</title>
+    <link rel="stylesheet" href="./styles.css"> <!-- Notice the './' indicating the current directory -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>CRM-system</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <input type="text" id="login" placeholder="Логин" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Пароль" required>
+                <span class="toggle-password" >&#128065;</span>
+            </div>
+            <button type="submit" onclick="myFunc()">Войти</button>
+        </form>
+    </div>
+    <script src="./script.js"></script> <!-- Notice the './' indicating the current directory -->
+</body>
+</html>

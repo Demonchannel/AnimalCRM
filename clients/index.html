@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">CRM-system</div>
+            <nav>
+                <ul>
+                    <li><a href="../clients/index.html" class="active"><img src="icons/home.png" alt="Главная">Главная</a></li>
+                    <li><a href="../reservation/index.html"><img src="icons/booking.png" alt="Бронирование">Бронирование</a></li>
+                    <li><a href="../normclients/index.html"><img src="icons/clients.png" alt="Клиенты">Клиенты</a></li>
+                    <li><a href="../services/index.html"><img src="icons/services.png" alt="Услуги">Услуги</a></li>
+                    <li><a href="../reports/index.html"><img src="icons/reports.png" alt="Отчеты">Отчеты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="time-date">22:44 01 мая 2024</div>
+                <div class="search">
+                    <input type="text" placeholder="Поиск">
+                </div>
+            </header>
+            <main>
+                <section class="cards">
+                    <div class="card">
+                        <h2>Заявки <span>1</span></h2>
+                        <button class="add-button">+ Добавить</button>
+                        <div class="card-content">
+                            <div class="card-item">
+                                <p>Иванов Иван Иванович</p>
+                                <p>05.05.2024-10.05.2024</p>
+                                <p>Собака - Хаски</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2>Бронирование подтверждено <span>0</span></h2>
+                        <button class="add-button">+ Добавить</button>
+                        <div class="card-content">
+                            <!-- No confirmed bookings -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2>Живут <span>2</span></h2>
+                        <button class="add-button">+ Добавить</button>
+                        <div class="card-content">
+                            <div class="card-item">
+                                <p>Бронирование №185 Номер 16</p>
+                                <p>Александр</p>
+                                <p>22.04.2024-01.05.2024</p>
+                                <p>Кошка - Британская</p>
+                            </div>
+                            <div class="card-item">
+                                <p>Бронирование №181 Номер 28</p>
+                                <p>Кристина</p>
+                                <p>29.04.2024-02.05.2024</p>
+                                <p>Собака - Корги</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Overlay and Content -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <span class="close-button" id="close-button">&times;</span>
+            <h2>Статус бронирования</h2>
+            <div class="status-buttons">
+                <button class="status-button active">Новое</button>
+                <button class="status-button">Подтвержден</button>
+                <button class="status-button">Заехал</button>
+                <button class="status-button">Выехал</button>
+                <button class="status-button">Отменен</button>
+            </div>
+            <div class="booking-info">
+                <h3>Информация о бронировании</h3>
+                <div class="input-group">
+                    <label for="checkin">Заезд</label>
+                    <input type="date" id="checkin" value="2024-04-22">
+                </div>
+                <div class="input-group">
+                    <label for="checkout">Выезд</label>
+                    <input type="date" id="checkout" value="2024-05-01">
+                </div>
+                <div class="input-group">
+                    <label for="nights">Ночи</label>
+                    <input type="text" id="nights" value="9" disabled>
+                </div>
+                <div class="input-group">
+                    <label for="cost">Стоимость</label>
+                    <input type="text" id="cost" value="102 $" disabled>
+                </div>
+            </div>
+            <div class="client-info">
+                <h3>Информация о клиенте</h3>
+                <div class="input-group">
+                    <label for="client-name">Фамилия, имя</label>
+                    <input type="text" id="client-name" value="Александр">
+                </div>
+                <div class="input-group">
+                    <label for="client-phone">Номер телефона</label>
+                    <input type="tel" id="client-phone" value="+7(___)___-__-__">
+                </div>
+                <div class="input-group">
+                    <label for="client-email">Email</label>
+                    <input type="email" id="client-email" value="qwertyuouip@gmail.com">
+                </div>
+            </div>
+            <div class="pet-info">
+                <h3>Информация о питомце</h3>
+                <div class="input-group">
+                    <label for="pet-gender">Пол</label>
+                    <input type="text" id="pet-gender">
+                </div>
+                <div class="input-group">
+                    <label for="pet-age">Возраст</label>
+                    <input type="text" id="pet-age">
+                </div>
+                <div class="input-group">
+                    <label for="pet-name">Кличка</label>
+                    <input type="text" id="pet-name">
+                </div>
+                <div class="input-group">
+                    <label for="pet-breed">Порода</label>
+                    <input type="text" id="pet-breed">
+                </div>
+                <div class="input-group">
+                    <label for="pet-walk">Требование о выгуле</label>
+                    <input type="checkbox" id="pet-walk">
+                </div>
+                <div class="input-group">
+                    <label for="pet-notes">Примечания</label>
+                    <input type="text" id="pet-notes">
+                </div>
+            </div>
+            <button class="save-button">Сохранить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

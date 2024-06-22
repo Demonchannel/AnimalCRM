@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Reports</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">CRM-system</div>
+            <nav>
+                <ul>
+                    <li><a href="../clients/index.html"><img src="icons/home.png" alt="Главная">Главная</a></li>
+                    <li><a href="../reservation/index.html"><img src="icons/booking.png" alt="Бронирование">Бронирование</a></li>
+                    <li><a href="../normclients/index.html"><img src="icons/clients.png" alt="Клиенты">Клиенты</a></li>
+                    <li><a href="../services/index.html"><img src="icons/services.png" alt="Услуги">Услуги</a></li>
+                    <li><a href="../reports/index.html" class="active"><img src="icons/reports.png" alt="Отчеты">Отчеты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="time-date">22:44 01 мая 2024</div>
+                <button class="add-button">+ Добавить</button>
+            </header>
+            <main>
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>Чистая прибыль за неделю</h3>
+                        <p class="summary-value">1 854 $</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Расходы</h3>
+                        <p class="summary-value">956 $ / неделю</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Доходы</h3>
+                        <p class="summary-value">405 $ / неделю</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Чистая прибыль</h3>
+                    <canvas id="profitChart"></canvas>
+                    <div class="chart-buttons">
+                        <button class="chart-button">День</button>
+                        <button class="chart-button">Неделя</button>
+                        <button class="chart-button active">Месяц</button>
+                        <button class="chart-button">Год</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Чистая прибыль за неделю</h3>
+                    <canvas id="weeklyProfitChart"></canvas>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

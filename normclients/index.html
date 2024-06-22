@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Clients</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">CRM-system</div>
+            <nav>
+                <ul>
+                    <li><a href="../clients/index.html"><img src="icons/home.png" alt="Главная">Главная</a></li>
+                    <li><a href="../reservation/index.html"><img src="icons/booking.png" alt="Бронирование">Бронирование</a></li>
+                    <li><a href="../normclients/index.html" class="active"><img src="icons/clients.png" alt="Клиенты">Клиенты</a></li>
+                    <li><a href="../services/index.html"><img src="icons/services.png" alt="Услуги">Услуги</a></li>
+                    <li><a href="../reports/index.html"><img src="icons/reports.png" alt="Отчеты">Отчеты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="time-date">22:44 01 мая 2024</div>
+                <div class="search">
+                    <input type="text" placeholder="Поиск">
+                </div>
+            </header>
+            <main>
+                <div class="actions">
+                    <button class="add-button">+ Добавить</button>
+                    <button class="filter-button">Фильтр</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Телефон</th>
+                            <th>Кличка</th>
+                            <th>Питомец</th>
+                            <th>Статус</th>
+                            <th>Дата</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="client-name">Петров Иван</td>
+                            <td>+7(258)125-25-25</td>
+                            <td class="pet-name">Джеймас</td>
+                            <td>Кошка - Британская</td>
+                            <td><span class="status active">Активный</span></td>
+                            <td>22.04.2024</td>
+                            <td><button class="options-button">...</button></td>
+                        </tr>
+                        <tr>
+                            <td class="client-name">Петр Иванов</td>
+                            <td>+7(258)125-25-25</td>
+                            <td class="pet-name">Локи</td>
+                            <td>Собака - Хаски</td>
+                            <td><span class="status inactive">Не активный</span></td>
+                            <td>17.12.2022</td>
+                            <td><button class="options-button">...</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="pagination-button">&lt;</button>
+                    <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button">4</button>
+                    <button class="pagination-button">...</button>
+                    <button class="pagination-button">20</button>
+                    <button class="pagination-button">&gt;</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal 1 - Client Information -->
+    <div class="modal-overlay" id="modal-overlay-client">
+        <div class="modal" id="modal-client">
+            <span class="close-button" id="close-button-client">&times;</span>
+            <h2>Создание карточки</h2>
+            <div class="client-info">
+                <h3>Информация о клиенте</h3>
+                <div class="input-group">
+                    <label for="client-name">Фамилия, имя</label>
+                    <input type="text" id="client-name" value="Петров Иван">
+                </div>
+                <div class="input-group">
+                    <label for="client-phone">Номер телефона</label>
+                    <input type="tel" id="client-phone" value="+7(___)___-__-__">
+                </div>
+                <div class="input-group">
+                    <label for="client-email">Email</label>
+                    <input type="email" id="client-email" value="qwertyuouip@gmail.com">
+                </div>
+            </div>
+            <div class="pet-info">
+                <h3>Информация о питомце</h3>
+                <div class="input-group">
+                    <label for="pet-name">Кличка</label>
+                    <input type="text" id="pet-name">
+                </div>
+                <div class="input-group">
+                    <label for="pet-breed">Порода</label>
+                    <input type="text" id="pet-breed">
+                </div>
+                <div class="input-group">
+                    <label for="pet-gender">Пол</label>
+                    <input type="text" id="pet-gender">
+                </div>
+                <div class="input-group">
+                    <label for="pet-age">Возраст</label>
+                    <input type="text" id="pet-age">
+                </div>
+                <div class="input-group">
+                    <label for="pet-walk">Требование о выгуле</label>
+                    <input type="checkbox" id="pet-walk">
+                </div>
+                <div class="input-group">
+                    <label for="pet-aggression">Агрессивность</label>
+                    <label><input type="radio" name="aggression" value="yes"> Да</label>
+                    <label><input type="radio" name="aggression" value="no" checked> Нет</label>
+                </div>
+                <div class="input-group">
+                    <label for="pet-notes">Примечания</label>
+                    <textarea id="pet-notes"></textarea>
+                </div>
+            </div>
+            <div class="payment-info">
+                <h3>Платежные данные</h3>
+                <div class="input-group">
+                    <label for="card-number">Карта</label>
+                    <input type="text" id="card-number" placeholder="Номер карты">
+                    <input type="text" id="card-name" placeholder="Имя">
+                    <input type="text" id="card-expiry" placeholder="MM/YY">
+                    <input type="text" id="card-cvv" placeholder="CVV">
+                </div>
+            </div>
+            <button class="save-button">Сохранить</button>
+        </div>
+    </div>
+
+    <!-- Modal 2 - Pet Information -->
+    <div class="modal-overlay" id="modal-overlay-pet">
+        <div class="modal" id="modal-pet">
+            <span class="close-button" id="close-button-pet">&times;</span>
+            <div class="pet-details">
+                <img src="path/to/pet-image.jpg" alt="Pet Image" class="pet-image">
+                <h2>Джеймас</h2>
+                <p>Порода: Бигль</p>
+                <p>Пол: Мальчик</p>
+                <p>Возраст: 4 года</p>
+                <h3>Информация о владельце</h3>
+                <p>ФИО: Алеся</p>
+                <p>Телефон: +7(258)125-25-25</p>
+                <p>Email: qwerryterd@gmail.com</p>
+                <p>Дата регистрации: 13.06.2022</p>
+            </div>
+            <div class="booking-info">
+                <h3>Период</h3>
+                <div class="input-group">
+                    <label for="period">Выберите период</label>
+                    <input type="date" id="period">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер бронирования</th>
+                            <th>Дата проживания</th>
+                            <th>Номер</th>
+                            <th>Итог</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>158/1</td>
+                            <td>22.01.2023 - 31.01.2023</td>
+                            <td>28</td>
+                            <td>105 $</td>
+                        </tr>
+                        <tr>
+                            <td>101/3</td>
+                            <td>02.03.2024 - 12.03.2024</td>
+                            <td>30</td>
+                            <td>120 $</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="print-button">Печать</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

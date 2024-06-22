@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM-system Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">CRM-system</div>
+            <nav>
+                <ul>
+                    <li><a href="../clients/index.html"><img src="icons/home.png" alt="Главная">Главная</a></li>
+                    <li><a href="../reservation/index.html" class="active"><img src="icons/booking.png" alt="Бронирование">Бронирование</a></li>
+                    <li><a href="../normclients/index.html"><img src="icons/clients.png" alt="Клиенты">Клиенты</a></li>
+                    <li><a href="../services/index.html"><img src="icons/services.png" alt="Услуги">Услуги</a></li>
+                    <li><a href="../reports/index.html"><img src="icons/reports.png" alt="Отчеты">Отчеты</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="time-date">22:44 01 мая 2024</div>
+            </header>
+            <main>
+                <div class="booking-grid">
+                    <div class="booking-section">
+                        <h3>Номера для кошек</h3>
+                        <div class="rooms">
+                            <!-- Generate room buttons dynamically -->
+                            <button class="room" data-room="1">1</button>
+                            <button class="room" data-room="2">2</button>
+                            <button class="room" data-room="3">3</button>
+                            <button class="room" data-room="4">4</button>
+                            <button class="room" data-room="5">5</button>
+                            <button class="room" data-room="6">6</button>
+                            <button class="room" data-room="7">7</button>
+                            <button class="room" data-room="8">8</button>
+                            <button class="room" data-room="9">9</button>
+                            <button class="room" data-room="10">10</button>
+                            <button class="room" data-room="11">11</button>
+                            <button class="room" data-room="12">12</button>
+                            <button class="room" data-room="13">13</button>
+                            <button class="room" data-room="14">14</button>
+                            <button class="room" data-room="15">15</button>
+                            <button class="room" data-room="16">16</button>
+                        </div>
+                    </div>
+                    <div class="booking-section">
+                        <h3>Номера для собак</h3>
+                        <div class="rooms">
+                            <button class="room" data-room="17">17</button>
+                            <button class="room" data-room="18">18</button>
+                            <button class="room" data-room="19">19</button>
+                            <button class="room" data-room="20">20</button>
+                            <button class="room" data-room="21">21</button>
+                            <button class="room" data-room="22">22</button>
+                            <button class="room" data-room="23">23</button>
+                            <button class="room" data-room="24">24</button>
+                            <button class="room" data-room="25">25</button>
+                            <button class="room" data-room="26">26</button>
+                            <button class="room" data-room="27">27</button>
+                            <button class="room" data-room="28">28</button>
+                            <button class="room" data-room="29">29</button>
+                            <button class="room" data-room="30">30</button>
+                            <button class="room" data-room="31">31</button>
+                            <button class="room" data-room="32">32</button>
+                        </div>
+                    </div>
+                    <div class="booking-section">
+                        <h3>Другое</h3>
+                        <div class="rooms">
+                            <button class="room" data-room="33">33</button>
+                            <button class="room" data-room="34">34</button>
+                            <button class="room" data-room="35">35</button>
+                            <button class="room" data-room="36">36</button>
+                            <button class="room" data-room="37">37</button>
+                            <button class="room" data-room="38">38</button>
+                            <button class="room" data-room="39">39</button>
+                            <button class="room" data-room="40">40</button>
+                            <button class="room" data-room="41">41</button>
+                            <button class="room" data-room="42">42</button>
+                            <button class="room" data-room="43">43</button>
+                            <button class="room" data-room="44">44</button>
+                        </div>
+                    </div>
+                </div>
+                <aside>
+                    <h3>Загрузка отеля</h3>
+                    <div class="hotel-load">
+                        <h1>0/44</h1>
+                        <div class="load-details">
+                            <div>
+                                <input type="checkbox" id="cats" checked>
+                                <label for="cats">Номера для кошек</label>
+                                <span>0</span>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="dogs" checked>
+                                <label for="dogs">Номера для собак</label>
+                                <span>0</span>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="others">
+                                <label for="others">Другое</label>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Overlay and Content -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <span class="close-button" id="close-button">&times;</span>
+            <h2>Статус бронирования</h2>
+            <div class="status-buttons">
+                <button class="status-button active">Новое</button>
+                <button class="status-button">Подтвержден</button>
+                <button class="status-button">Заехал</button>
+                <button class="status-button">Выехал</button>
+                <button class="status-button">Отменен</button>
+            </div>
+            <div class="booking-info">
+                <h3>Информация о бронировании</h3>
+                <div class="input-group">
+                    <label for="checkin">Заезд</label>
+                    <input type="date" id="checkin" value="2024-04-24">
+                </div>
+                <div class="input-group">
+                    <label for="checkout">Выезд</label>
+                    <input type="date" id="checkout" value="2024-04-27">
+                </div>
+                <div class="input-group">
+                    <label for="nights">Ночи</label>
+                    <input type="text" id="nights" value="3" disabled>
+                </div>
+                <div class="input-group">
+                    <label for="cost">Стоимость</label>
+                    <input type="text" id="cost" value="" disabled>
+                </div>
+                <div class="input-group">
+                    <label for="room-number">Номер</label>
+                    <input type="text" id="room-number" value="" disabled>
+                </div>
+            </div>
+            <div class="client-info">
+                <h3>Информация о клиенте</h3>
+                <div class="input-group">
+                    <label for="client-name">Фамилия, имя</label>
+                    <input type="text" id="client-name" value="Петров Иван">
+                </div>
+                <div class="input-group">
+                    <label for="client-phone">Номер телефона</label>
+                    <input type="tel" id="client-phone" value="+7(___)___-__-__">
+                </div>
+                <div class="input-group">
+                    <label for="client-email">Email</label>
+                    <input type="email" id="client-email" value="qwertyuouip@gmail.com">
+                </div>
+            </div>
+            <div class="pet-info">
+                <h3>Информация о питомце</h3>
+                <div class="input-group">
+                    <label for="pet-gender">Пол</label>
+                    <input type="text" id="pet-gender">
+                </div>
+                <div class="input-group">
+                    <label for="pet-age">Возраст</label>
+                    <input type="text" id="pet-age">
+                </div>
+                <div class="input-group">
+                    <label for="pet-name">Кличка</label>
+                    <input type="text" id="pet-name">
+                </div>
+                <div class="input-group">
+                    <label for="pet-breed">Порода</label>
+                    <input type="text" id="pet-breed">
+                </div>
+                <div class="input-group">
+                    <label for="pet-walk">Требование о выгуле</label>
+                    <input type="checkbox" id="pet-walk">
+                </div>
+                <div class="input-group">
+                    <label for="pet-notes">Примечания</label>
+                    <input type="text" id="pet-notes">
+                </div>
+            </div>
+            <button class="save-button">Сохранить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
